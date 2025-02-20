@@ -1,0 +1,13 @@
+Foxeer Predator 5 Micro
+cam id on
+
+pic adj
+- brt 128
+- cont 138
+- shp 128
+- hue 086
+- color 138
+
+auto day night
+mode day
+NTSC 4:3	
