@@ -1,0 +1,18 @@
+MODEL #		USED FOR
+0			sim
+1			ELRS
+2			iNAV
+3			PX4
+4			CRSF/DRL
+5 			GHST
+
+
+MODEL 1 SETTINGS
+	X150
+	STD telem
+	hybrid mode
+	gemini
+	normal link
+	model match off
+	TXPWR: 100mW/dyn/50mW
+	VTXADM: R/8/-/off
