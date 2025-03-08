@@ -1,21 +1,5 @@
-# 
-
-# diff all
-
-# version
 # Betaflight / STM32F411 (S411) 4.5.2.KAACK_V15 Dec 22 2024 / 16:07:37 (e5abc7db3) MSP API: 1.46
-# config rev: 16ac022
-
-# start the command batch
-batch start
-
-# reset configuration to default settings
-defaults nosave
-
-board_name CRAZYBEEF4SX1280
-manufacturer_id HAMO
-mcu_id 003a000d3533511037393932
-signature 
+# board_name CRAZYBEEF4SX1280
 
 # name: RUN LIZ
 
@@ -201,7 +185,7 @@ set osd_profile_name_pos = 234
 set osd_rcchannels_pos = 234
 set osd_camera_frame_pos = 35
 set osd_efficiency_pos = 234
-set osd_total_flights_pos = 3628
+set osd_total_flights_pos = 1580
 set osd_aux_pos = 234
 set osd_spec_logo_pos = 14403
 set osd_sys_goggle_voltage_pos = 234
@@ -231,9 +215,6 @@ set gyro_2_sensor_align = CW0
 set expresslrs_uid = 202,160,239,230,94,130
 set expresslrs_switch_mode = HYBRID
 set rpm_filter_harmonics = 1
-set stats_min_armed_time_s = 7
-set stats_total_flights = 141
-set stats_total_time_s = 4309
 set craft_name = RUN LIZ
 set extra_100_throttle = AHHHH
 set extra_fc_hot_warning = IM COOKIN
@@ -271,12 +252,6 @@ set simplified_feedforward_gain = 50
 set simplified_pitch_d_gain = 110
 set simplified_pitch_pi_gain = 110
 
-profile 1
-
-profile 2
-
-profile 3
-
 # restore original profile selection
 profile 0
 
@@ -288,24 +263,14 @@ set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
 set yaw_rc_rate = 100
-set roll_expo = 10
-set pitch_expo = 10
-set yaw_expo = 20
-set roll_srate = 35
-set pitch_srate = 43
-set yaw_srate = 43
+set roll_expo = 15
+set pitch_expo = 15
+set yaw_expo = 15
+set roll_srate = 30
+set pitch_srate = 30
+set yaw_srate = 30
 set throttle_limit_type = SCALE
-set throttle_limit_percent = 85
-
-rateprofile 1
-
-rateprofile 2
-
-rateprofile 3
+set throttle_limit_percent = 75
 
 # restore original rateprofile selection
 rateprofile 0
-
-# save configuration
-save
-# 
