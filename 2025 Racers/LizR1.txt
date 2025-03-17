@@ -140,7 +140,7 @@ set extra_100_throttle = AAAHHH
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = GET UP
 set extra_low_battery_warning = ON FUMES
-set extra_armed_warning = MEEP MEEP
+set extra_armed_warning = RUNNING LIZARD
 
 profile 0
 
