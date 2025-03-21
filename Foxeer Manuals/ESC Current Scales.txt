@@ -1,0 +1,3 @@
+Reaper 45A: 115
+Reaper 60A: 70
+Reaper 55A: 70
