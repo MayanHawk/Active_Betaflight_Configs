@@ -1,0 +1,220 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F405 (S405) 4.5.2.KAACK_V15 Dec 15 2024 / 04:10:34 (e5abc7db3) MSP API: 1.46
+# config rev: d32d763
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name SPEEDYBEEF405V3
+manufacturer_id SPBE
+mcu_id 002a00233232471232333535
+signature 
+
+# name: Chaser 1
+
+# feature
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+
+# serial
+serial 3 0 115200 57600 0 115200
+serial 4 0 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -GPS_STATUS
+beeper -ACC_CALIBRATION
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+
+# beacon
+beacon RX_LOST
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 13 1 900 1300 0 0
+aux 2 35 1 900 1300 0 0
+aux 3 49 1 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWBAND  L CUSTOM     0    0    0    0    0    0    0    0
+vtxtable powerlevels 5
+vtxtable powervalues 14 23 27 30 0
+vtxtable powerlabels 25 200 500 MAX 0
+
+# vtx
+vtx 0 2 0 0 5 900 1300
+vtx 1 2 0 0 1 1300 1700
+vtx 2 2 0 0 1 1700 2100
+
+# rxfail
+rxfail 4 s 750
+rxfail 5 s 1000
+rxfail 6 s 1000
+
+# master
+set gyro_lpf1_static_hz = 500
+set gyro_lpf2_static_hz = 1000
+set dyn_notch_count = 2
+set dyn_notch_q = 500
+set dyn_notch_min_hz = 120
+set gyro_lpf1_dyn_min_hz = 500
+set gyro_lpf1_dyn_max_hz = 1000
+set acc_lpf_hz = 10
+set acc_calibration = -44,-18,44,1
+set min_check = 1010
+set max_check = 1995
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
+set motor_kv = 2550
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set bat_capacity = 1500
+set vbat_max_cell_voltage = 440
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set deadband = 1
+set yaw_deadband = 1
+set simplified_gyro_filter_multiplier = 200
+set report_cell_voltage = ON
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 40829
+set osd_rssi_dbm_alarm = -94
+set osd_logo_on_arming = FIRST_ARMING
+set osd_show_spec_prearm = OFF
+set osd_tim1 = 2561
+set osd_vbat_pos = 2593
+set osd_rssi_pos = 3116
+set osd_link_quality_pos = 55
+set osd_rssi_dbm_pos = 1068
+set osd_flymode_pos = 23
+set osd_g_force_pos = 1133
+set osd_throttle_pos = 3148
+set osd_vtx_channel_pos = 2102
+set osd_crosshairs_pos = 269
+set osd_ah_sbar_pos = 270
+set osd_ah_pos = 142
+set osd_current_pos = 545
+set osd_mah_drawn_pos = 2552
+set osd_craft_name_pos = 2070
+set osd_gps_speed_pos = 2145
+set osd_gps_lon_pos = 2612
+set osd_gps_lat_pos = 2580
+set osd_gps_sats_pos = 2081
+set osd_home_dir_pos = 2210
+set osd_home_dist_pos = 2177
+set osd_flight_dist_pos = 471
+set osd_compass_bar_pos = 21
+set osd_altitude_pos = 2113
+set osd_warnings_pos = 2420
+set osd_avg_cell_voltage_pos = 2561
+set osd_disarmed_pos = 2486
+set osd_total_flights_pos = 3629
+set osd_spec_logo_pos = 14403
+set osd_stat_bitmask = 1081362221
+set osd_gps_sats_show_pdop = ON
+set osd_canvas_width = 50
+set osd_canvas_height = 18
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 1
+set vtx_freq = 5917
+set rpm_filter_harmonics = 2
+set rpm_filter_fade_range_hz = 100
+set stats_min_armed_time_s = 10
+set stats_total_flights = 8
+set stats_total_time_s = 1021
+set craft_name = Chaser 1
+set extra_100_throttle = SQUAWK
+set extra_fc_hot_warning = IM COOKIN
+set extra_turtle_mode_warning = GET UP
+set extra_low_battery_warning = ON FUMES
+set extra_armed_warning = MEEP MEEP
+
+profile 0
+
+# profile 0
+set profile_name = MYN HWK
+set dterm_lpf1_dyn_expo = 10
+set p_pitch = 59
+set i_pitch = 106
+set d_pitch = 58
+set f_pitch = 158
+set p_roll = 51
+set i_roll = 92
+set d_roll = 53
+set f_roll = 138
+set horizon_level_strength = 50
+set d_min_roll = 43
+set d_min_pitch = 46
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 3
+set feedforward_boost = 18
+set simplified_pids_mode = RP
+set simplified_d_gain = 145
+set simplified_pi_gain = 115
+set simplified_dmax_gain = 70
+set simplified_feedforward_gain = 115
+set simplified_pitch_d_gain = 95
+set simplified_pitch_pi_gain = 110
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rateprofile_name = MH6
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 63
+set pitch_srate = 59
+set yaw_srate = 59
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
