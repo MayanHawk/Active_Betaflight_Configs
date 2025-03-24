@@ -1,23 +1,7 @@
-# 
-
-# diff all
-
-# version
 # Betaflight / STM32F7X2 (S7X2) 4.5.2.KAACK_V15 Nov  9 2024 / 14:50:00 (e5abc7db3) MSP API: 1.46
-# config rev: 6239460
-
-# start the command batch
-batch start
-
-# reset configuration to default settings
-defaults nosave
-
-board_name HOBBYWING_XROTORF7CONV
-manufacturer_id HOWI
-mcu_id 0022002f3233511539373734
-signature 
-
+# board_name HOBBYWING_XROTORF7CONV
 # name: MYN HWK
+# Kev4
 
 # feature
 feature TELEMETRY
@@ -52,7 +36,6 @@ beeper -CAM_CONNECTION_CLOSE
 
 # beacon
 beacon RX_LOST
-
 
 # map
 map TAER1234
@@ -120,7 +103,7 @@ set ibata_scale = 180
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set rpm_limit = ON
-set rpm_limit_value = 28500
+set rpm_limit_value = 24000
 set simplified_gyro_filter = OFF
 set report_cell_voltage = ON
 set osd_units = IMPERIAL
@@ -133,26 +116,28 @@ set osd_vbat_pos = 535
 set osd_rssi_dbm_pos = 3147
 set osd_throttle_pos = 3179
 set osd_vtx_channel_pos = 2615
+set osd_pilot_name_pos = 2581
 set osd_warnings_pos = 14740
 set osd_avg_cell_voltage_pos = 2551
 set osd_disarmed_pos = 2390
 set osd_rate_profile_name_pos = 3083
 set osd_pid_profile_name_pos = 3115
 set osd_total_flights_pos = 3629
-set osd_spec_logo_pos = 14403
+set osd_spec_logo_pos = 14851
 set osd_stat_bitmask = 1887519779
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 2
+set vtx_channel = 8
 set vtx_power = 3
-set vtx_freq = 5695
+set vtx_freq = 5917
 set gyro_1_sensor_align = DEFAULT
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 51
-set stats_total_time_s = 3630
+set stats_total_flights = 71
+set stats_total_time_s = 4735
 set craft_name = MYN HWK
+set pilot_name = Mayan Hawk
 set extra_100_throttle = SQUAWK
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = GET UP
@@ -194,12 +179,6 @@ set tpa_rate = 70
 set tpa_breakpoint = 1250
 set ez_landing_limit = 5
 
-profile 1
-
-profile 2
-
-profile 3
-
 # restore original profile selection
 profile 0
 
@@ -233,13 +212,5 @@ set roll_srate = 35
 set pitch_srate = 43
 set yaw_srate = 43
 
-rateprofile 2
-
-rateprofile 3
-
 # restore original rateprofile selection
 rateprofile 0
-
-# save configuration
-save
-# 

@@ -1,8 +1,7 @@
 # Betaflight / STM32F7X2 (S7X2) 4.5.2.KAACK_V15 Jan 15 2025 / 18:29:13 (e5abc7db3) MSP API: 1.46
-# reset configuration to default settings
 # board_name FOXEERF722V4
-
 # name: MYN HWK
+# Kev5
 
 # feature
 feature TELEMETRY
@@ -117,28 +116,30 @@ set osd_vbat_pos = 535
 set osd_rssi_dbm_pos = 3147
 set osd_throttle_pos = 3179
 set osd_vtx_channel_pos = 2615
+set osd_pilot_name_pos = 533
 set osd_warnings_pos = 14740
 set osd_avg_cell_voltage_pos = 2551
 set osd_disarmed_pos = 2390
 set osd_rate_profile_name_pos = 3083
 set osd_pid_profile_name_pos = 3115
 set osd_total_flights_pos = 3629
-set osd_spec_logo_pos = 14403
+set osd_spec_logo_pos = 14851
 set osd_stat_bitmask = 1887519779
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 1
+set vtx_channel = 8
 set vtx_power = 3
-set vtx_freq = 5658
+set vtx_freq = 5917
 set displayport_msp_fonts = 0,0,0,0
 set rpm_filter_weights = 100,20,100
 set rpm_filter_min_hz = 150
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 3
-set stats_total_time_s = 451
+set stats_total_flights = 5
+set stats_total_time_s = 798
 set craft_name = MYN HWK
+set pilot_name = Mayan Hawk
 set extra_100_throttle = SQUAWK
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = GET UP
@@ -187,7 +188,7 @@ profile 0
 rateprofile 0
 
 # rateprofile 0
-set rateprofile_name = MH N
+set rateprofile_name = MH 5
 set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
