@@ -1,8 +1,7 @@
 # Betaflight / STM32F7X2 (S7X2) 4.5.2.KAACK_V15 Nov  9 2024 / 14:50:00 (e5abc7db3) MSP API: 1.46
-# reset configuration to default settings
 # board_name HOBBYWING_XROTORF7CONV
-
 # name: Run Liz
+# Liz2
 
 # feature
 feature TELEMETRY
@@ -121,13 +120,14 @@ set osd_rssi_dbm_pos = 3147
 set osd_throttle_pos = 3179
 set osd_vtx_channel_pos = 2615
 set osd_crosshairs_pos = 2360
+set osd_pilot_name_pos = 532
 set osd_warnings_pos = 14740
 set osd_avg_cell_voltage_pos = 2519
 set osd_disarmed_pos = 2390
 set osd_rate_profile_name_pos = 3083
 set osd_pid_profile_name_pos = 3115
 set osd_total_flights_pos = 3629
-set osd_spec_logo_pos = 14403
+set osd_spec_logo_pos = 14851
 set osd_stat_bitmask = 1887519779
 set osd_canvas_width = 50
 set osd_canvas_height = 18
@@ -139,9 +139,10 @@ set displayport_msp_fonts = 0,0,0,0
 set gyro_1_sensor_align = DEFAULT
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 54
-set stats_total_time_s = 3018
+set stats_total_flights = 70
+set stats_total_time_s = 4476
 set craft_name = Run Liz
+set pilot_name = Running Lizard
 set extra_100_throttle = AAAHHH
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = GET UP
