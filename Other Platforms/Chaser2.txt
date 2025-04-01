@@ -1,25 +1,9 @@
-# 
-
-# diff all
-
-# version
 # Betaflight / STM32F405 (S405) 4.5.2.KAACK_V15 Dec 15 2024 / 04:10:34 (e5abc7db3) MSP API: 1.46
-# config rev: d32d763
-
-# start the command batch
-batch start
-
-# reset configuration to default settings
-defaults nosave
-
-board_name SPEEDYBEEF405V3
-manufacturer_id SPBE
-mcu_id 002a00233232471232333535
-signature 
-
+# board_name SPEEDYBEEF405V3
 # name: Chaser 1
 
 # feature
+feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
@@ -27,6 +11,7 @@ feature OSD
 # serial
 serial 3 0 115200 57600 0 115200
 serial 4 0 115200 57600 0 115200
+serial 5 1 57600 57600 0 115200
 
 # beeper
 beeper -GYRO_CALIBRATED
@@ -96,6 +81,7 @@ set bat_capacity = 1500
 set vbat_max_cell_voltage = 440
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
+set gps_provider = MSP
 set deadband = 1
 set yaw_deadband = 1
 set simplified_gyro_filter_multiplier = 200
@@ -107,9 +93,9 @@ set osd_logo_on_arming = FIRST_ARMING
 set osd_show_spec_prearm = OFF
 set osd_tim1 = 2561
 set osd_vbat_pos = 2593
-set osd_rssi_pos = 3116
+set osd_rssi_pos = 1068
 set osd_link_quality_pos = 55
-set osd_rssi_dbm_pos = 1068
+set osd_rssi_dbm_pos = 3115
 set osd_flymode_pos = 23
 set osd_g_force_pos = 1133
 set osd_throttle_pos = 3148
@@ -138,9 +124,10 @@ set osd_stat_bitmask = 1081362221
 set osd_gps_sats_show_pdop = ON
 set osd_canvas_width = 50
 set osd_canvas_height = 18
+set cpu_overclock = 216MHZ
 set vtx_band = 5
 set vtx_channel = 8
-set vtx_power = 1
+set vtx_power = 5
 set vtx_freq = 5917
 set rpm_filter_harmonics = 2
 set rpm_filter_fade_range_hz = 100
@@ -182,19 +169,13 @@ set simplified_feedforward_gain = 115
 set simplified_pitch_d_gain = 95
 set simplified_pitch_pi_gain = 110
 
-profile 1
-
-profile 2
-
-profile 3
-
 # restore original profile selection
 profile 0
 
 rateprofile 0
 
 # rateprofile 0
-set rateprofile_name = MH6
+set rateprofile_name = MH
 set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
@@ -205,12 +186,6 @@ set yaw_expo = 1
 set roll_srate = 63
 set pitch_srate = 59
 set yaw_srate = 59
-
-rateprofile 1
-
-rateprofile 2
-
-rateprofile 3
 
 # restore original rateprofile selection
 rateprofile 0
