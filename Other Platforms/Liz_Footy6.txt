@@ -1,7 +1,8 @@
 # Betaflight / STM32F7X2 (S7X2) 4.5.3.KAACK_V17 Apr 21 2025 / 22:01:12 (efef89735) MSP API: 1.46
 # board_name HOBBYWING_XROTORF7CONV
+# manufacturer_id HOWI
+
 # name: RUN LIZ
-# Liz3
 
 # feature
 feature TELEMETRY

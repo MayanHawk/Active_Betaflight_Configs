@@ -1,0 +1,14 @@
+# HDZero FS v2 (kaze)
+vtx 0 2 0 0 5 900 1300
+vtx 1 2 0 0 4 1300 1700
+vtx 2 2 0 0 1 1700 2100
+
+# HDZero Race v3 (kaze)
+vtx 0 2 0 0 3 900 1300
+vtx 1 2 0 0 2 1300 1700
+vtx 2 2 0 0 1 1700 2100
+
+# standard race v3
+vtx 0 2 0 0 3 900 1300
+vtx 1 2 0 0 1 1300 1700
+vtx 2 2 0 0 1 1700 2100
