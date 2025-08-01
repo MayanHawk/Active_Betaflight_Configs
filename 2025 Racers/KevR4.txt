@@ -4,6 +4,7 @@
 # Kev4
 
 # feature
+feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
@@ -11,6 +12,7 @@ feature ESC_SENSOR
 
 # serial
 serial 0 131073 115200 57600 0 115200
+serial 1 2 115200 57600 0 115200
 serial 2 64 115200 57600 0 115200
 serial 5 1024 115200 57600 0 115200
 
@@ -76,7 +78,7 @@ set dyn_notch_min_hz = 125
 set dyn_notch_max_hz = 650
 set gyro_lpf1_dyn_min_hz = 500
 set gyro_lpf1_dyn_max_hz = 1000
-set acc_calibration = -136,-28,754,1
+set acc_calibration = 24,11,855,1
 set baro_hardware = NONE
 set min_check = 1010
 set max_check = 1995
@@ -96,6 +98,7 @@ set blackbox_disable_debug = ON
 set blackbox_disable_motors = ON
 set blackbox_disable_rpm = ON
 set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
 set bat_capacity = 1500
 set vbat_max_cell_voltage = 438
 set vbat_min_cell_voltage = 340
@@ -103,7 +106,10 @@ set ibata_scale = 180
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set rpm_limit = ON
-set rpm_limit_value = 24000
+set rpm_limit_value = 28500
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set pid_process_denom = 2
 set simplified_gyro_filter = OFF
 set report_cell_voltage = ON
 set osd_units = IMPERIAL
@@ -117,6 +123,8 @@ set osd_rssi_dbm_pos = 3147
 set osd_throttle_pos = 3179
 set osd_vtx_channel_pos = 2615
 set osd_pilot_name_pos = 2581
+set osd_gps_speed_pos = 2103
+set osd_gps_sats_pos = 2070
 set osd_warnings_pos = 14740
 set osd_avg_cell_voltage_pos = 2551
 set osd_disarmed_pos = 2390
@@ -124,18 +132,19 @@ set osd_rate_profile_name_pos = 3083
 set osd_pid_profile_name_pos = 3115
 set osd_total_flights_pos = 3629
 set osd_spec_logo_pos = 14851
-set osd_stat_bitmask = 1887519779
+set osd_stat_bitmask = 1887519787
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 8
+set vtx_channel = 3
 set vtx_power = 3
-set vtx_freq = 5917
+set vtx_freq = 5732
 set gyro_1_sensor_align = DEFAULT
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 71
-set stats_total_time_s = 4735
+set stats_total_flights = 119
+set stats_total_time_s = 7503
+set stats_total_dist_m = 15820
 set craft_name = MYN HWK
 set pilot_name = Mayan Hawk
 set extra_100_throttle = SQUAWK

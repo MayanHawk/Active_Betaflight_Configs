@@ -97,6 +97,7 @@ set blackbox_disable_motors = ON
 set blackbox_disable_rpm = ON
 set motor_kv = 2070
 set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
 set bat_capacity = 1500
 set vbat_max_cell_voltage = 438
 set vbat_min_cell_voltage = 340
@@ -105,7 +106,8 @@ set ibata_scale = 187
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set rpm_limit = ON
-set rpm_limit_value = 24000
+set rpm_limit_value = 28500
+set pid_process_denom = 2
 set simplified_gyro_filter = OFF
 set report_cell_voltage = ON
 set osd_units = IMPERIAL
@@ -130,13 +132,13 @@ set osd_stat_bitmask = 1887519779
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 8
+set vtx_channel = 3
 set vtx_power = 3
-set vtx_freq = 5917
+set vtx_freq = 5732
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 124
-set stats_total_time_s = 9966
+set stats_total_flights = 135
+set stats_total_time_s = 10436
 set craft_name = MYN HWK
 set pilot_name = Mayan Hawk
 set extra_100_throttle = SQUAWK
@@ -180,9 +182,6 @@ set tpa_rate = 70
 set tpa_breakpoint = 1250
 set ez_landing_limit = 5
 
-# restore original profile selection
-profile 0
-
 rateprofile 0
 
 # rateprofile 0
@@ -197,21 +196,3 @@ set yaw_expo = 1
 set roll_srate = 63
 set pitch_srate = 59
 set yaw_srate = 59
-
-rateprofile 1
-
-# rateprofile 1
-set rateprofile_name = RL n
-set rates_type = BETAFLIGHT
-set roll_rc_rate = 100
-set pitch_rc_rate = 100
-set yaw_rc_rate = 100
-set roll_expo = 1
-set pitch_expo = 1
-set yaw_expo = 10
-set roll_srate = 35
-set pitch_srate = 43
-set yaw_srate = 43
-
-# restore original rateprofile selection
-rateprofile 0
