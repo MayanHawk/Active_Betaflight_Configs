@@ -3,6 +3,8 @@
 # name: RUN LIZ
 # Liz5
 
+# name: RUN LIZ
+
 # feature
 feature TELEMETRY
 feature LED_STRIP
@@ -103,7 +105,7 @@ set ibata_scale = 70
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set rpm_limit = ON
-set rpm_limit_value = 24000
+set rpm_limit_value = 27800
 set pid_process_denom = 2
 set simplified_gyro_filter = OFF
 set report_cell_voltage = ON
@@ -130,21 +132,21 @@ set osd_stat_bitmask = 1887519779
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 8
+set vtx_channel = 6
 set vtx_power = 3
-set vtx_freq = 5917
+set vtx_freq = 5843
 set displayport_msp_fonts = 0,0,0,0
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 1
-set stats_total_time_s = 7
+set stats_total_flights = 4
+set stats_total_time_s = 82
 set craft_name = RUN LIZ
 set pilot_name = Running Lizard
 set extra_100_throttle = AAAHHH
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = THIS END UP
 set extra_low_battery_warning = ON FUMES
-set extra_armed_warning = Running Lizard
+set extra_armed_warning = RUNNING LIZARD
 set extra_land_now_warning = PIT PIT PIT
 
 profile 0
