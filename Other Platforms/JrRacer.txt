@@ -1,0 +1,204 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F411 (S411) 4.4.2.RPM_KAACK_V1 Apr 11 2023 / 19:58:05 (13308a0ba) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name TCMMF411
+manufacturer_id TCMM
+mcu_id 0061002d4b56500a20313553
+signature 
+
+# feature
+feature -LED_STRIP
+
+# serial
+serial 1 2048 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -DISARMING
+beeper -ARMING
+beeper -ARMING_GPS_FIX
+beeper -GPS_STATUS
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 13 0 900 900 0 35
+aux 2 35 1 900 1300 0 0
+aux 3 39 2 900 1300 0 0
+aux 4 49 1 1700 2100 0 0
+aux 5 53 0 900 900 0 49
+
+# rxrange
+rxrange 0 989 2012
+rxrange 1 989 2012
+rxrange 2 989 2012
+rxrange 3 989 2012
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 3
+vtxtable powervalues 0 1 2
+vtxtable powerlabels 0 25 200
+
+# rxfail
+rxfail 4 s 1000
+rxfail 5 s 2000
+rxfail 6 s 1000
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 0
+set dyn_notch_count = 2
+set dyn_notch_min_hz = 150
+set dyn_notch_max_hz = 850
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 0
+set acc_lpf_hz = 10
+set acc_calibration = -65,94,-176,1
+set min_check = 1010
+set max_check = 2000
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set bat_capacity = 450
+set vbat_max_cell_voltage = 435
+set vbat_min_cell_voltage = 350
+set ibata_scale = 649
+set beeper_dshot_beacon_tone = 3
+set rpm_limiter = ON
+set rpm_limit = 469
+set rpm_limiter_motor_kv_real = 8000
+set small_angle = 180
+set yaw_deadband = 1
+set simplified_gyro_filter = OFF
+set report_cell_voltage = ON
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 34815
+set osd_rssi_dbm_alarm = -96
+set osd_vbat_pos = 385
+set osd_rssi_pos = 57
+set osd_rssi_dbm_pos = 2104
+set osd_tim_1_pos = 54
+set osd_tim_2_pos = 33
+set osd_flymode_pos = 385
+set osd_g_force_pos = 121
+set osd_throttle_pos = 2135
+set osd_vtx_channel_pos = 2453
+set osd_ah_pos = 110
+set osd_current_pos = 2433
+set osd_mah_drawn_pos = 385
+set osd_craft_name_pos = 364
+set osd_pilot_name_pos = 2421
+set osd_power_pos = 330
+set osd_warnings_pos = 2313
+set osd_avg_cell_voltage_pos = 2401
+set osd_disarmed_pos = 2282
+set osd_ready_mode_pos = 2092
+set osd_stat_bitmask = 2089878565
+set osd_canvas_height = 13
+set debug_mode = GYRO_SCALED
+set cpu_overclock = 120MHZ
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 2
+set vtx_freq = 5658
+set vcd_video_system = NTSC
+set rpm_filter_harmonics = 2
+set stats_total_flights = 3
+set stats_extra_total_kaacks = 29
+set stats_extra_total_kaack_time = 3
+set stats_total_time_s = 404
+set pilot_name = Myn Hwk
+set extra_100_throttle = SQUAWK
+set extra_fc_hot_warning = IM COOKIN
+set extra_turtle_mode_warning = GET UP
+set extra_low_battery_warning = ON FUMES
+set extra_armed_warning = MEEP MEEP
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 90
+set dterm_lpf1_dyn_max_hz = 180
+set dterm_lpf1_static_hz = 90
+set dterm_lpf2_static_hz = 180
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 0
+set p_pitch = 70
+set i_pitch = 126
+set d_pitch = 45
+set f_pitch = 187
+set p_roll = 67
+set i_roll = 120
+set f_roll = 180
+set p_yaw = 67
+set i_yaw = 120
+set f_yaw = 180
+set d_min_roll = 40
+set d_min_pitch = 45
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 3
+set feedforward_boost = 18
+set dyn_idle_min_rpm = 35
+set simplified_master_multiplier = 150
+set simplified_d_gain = 90
+set simplified_dmax_gain = 0
+set simplified_dterm_filter_multiplier = 120
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 60
+set pitch_srate = 59
+set yaw_srate = 59
+
+# restore original rateprofile selection
+rateprofile 0

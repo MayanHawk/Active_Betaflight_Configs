@@ -1,6 +1,5 @@
 # Betaflight / STM32F411 (S411) 4.4.3.KAACK_V12 Oct  9 2024 / 21:39:00 (8c11f39ac) MSP API: 1.45
 # board_name CRAZYBEEF4DX
-
 # name: MYN HWK
 
 # feature
@@ -126,17 +125,17 @@ set osd_displayport_device = MSP
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 7
+set vtx_channel = 8
 set vtx_power = 2
-set vtx_freq = 5880
+set vtx_freq = 5917
 set vcd_video_system = HD
 set gyro_1_sensor_align = CW0
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 15
-set stats_total_flights = 122
-set stats_extra_total_kaacks = 469
-set stats_extra_total_kaack_time = 16
-set stats_total_time_s = 5592
+set stats_total_flights = 172
+set stats_extra_total_kaacks = 628
+set stats_extra_total_kaack_time = 22
+set stats_total_time_s = 7419
 set craft_name = MYN HWK
 set extra_100_throttle = SQUAWK
 set extra_fc_hot_warning = IM COOKIN
@@ -195,7 +194,6 @@ set yaw_expo = 1
 set roll_srate = 63
 set pitch_srate = 59
 set yaw_srate = 59
-
 
 # restore original rateprofile selection
 rateprofile 0
