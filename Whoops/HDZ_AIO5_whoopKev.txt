@@ -2,8 +2,6 @@
 # Betaflight / STM32F411 (S411) 4.5.2.KAACK_V15 Dec 22 2024 / 16:07:37 (e5abc7db3) MSP API: 1.46
 # board_name CRAZYBEEF4SX1280
 
-# name: MYN HWK
-
 # resources
 resource MOTOR 1 B08
 resource MOTOR 2 B10
@@ -47,7 +45,6 @@ map TAER1234
 aux 0 0 0 1700 2100 0 0
 aux 1 13 1 900 1300 0 0
 aux 2 35 1 900 1300 0 0
-aux 3 49 1 1700 2100 0 0
 
 # vtxtable
 vtxtable bands 6
@@ -130,7 +127,7 @@ set osd_rsnr_pos = 234
 set osd_tim_1_pos = 1192
 set osd_tim_2_pos = 385
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 2071
+set osd_flymode_pos = 23
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 65
 set osd_throttle_pos = 3179
@@ -174,7 +171,7 @@ set osd_esc_rpm_freq_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_flip_arrow_pos = 234
-set osd_core_temp_pos = 14391
+set osd_core_temp_pos = 14359
 set osd_log_status_pos = 234
 set osd_stick_overlay_left_pos = 234
 set osd_stick_overlay_right_pos = 234
@@ -184,7 +181,7 @@ set osd_profile_name_pos = 234
 set osd_rcchannels_pos = 234
 set osd_camera_frame_pos = 35
 set osd_efficiency_pos = 234
-set osd_total_flights_pos = 3596
+set osd_total_flights_pos = 1548
 set osd_aux_pos = 234
 set osd_spec_logo_pos = 14403
 set osd_sys_goggle_voltage_pos = 234
@@ -203,9 +200,9 @@ set osd_menu_background = TRANSPARENT
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
-set vtx_channel = 3
+set vtx_channel = 1
 set vtx_power = 3
-set vtx_freq = 5732
+set vtx_freq = 5658
 set displayport_msp_fonts = 0,0,0,0
 set gyro_1_sensor_align = DEFAULT
 set gyro_1_align_yaw = 0
@@ -268,6 +265,7 @@ set yaw_expo = 1
 set roll_srate = 63
 set pitch_srate = 59
 set yaw_srate = 59
+
 
 # restore original rateprofile selection
 rateprofile 0
