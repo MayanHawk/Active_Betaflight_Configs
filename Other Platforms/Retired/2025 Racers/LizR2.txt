@@ -1,7 +1,7 @@
 # Betaflight / STM32F7X2 (S7X2) 4.5.2.KAACK_V15 Nov  9 2024 / 14:50:00 (e5abc7db3) MSP API: 1.46
 # board_name HOBBYWING_XROTORF7CONV
-# name: MYN HWK
-# Kev2
+# name: Run Liz
+# Liz2
 
 # feature
 feature TELEMETRY
@@ -16,6 +16,7 @@ serial 5 1024 115200 57600 0 115200
 
 # beeper
 beeper -GYRO_CALIBRATED
+beeper -RX_LOST
 beeper -RX_LOST_LANDING
 beeper -DISARMING
 beeper -ARMING
@@ -33,6 +34,7 @@ beeper -ON_USB
 beeper -BLACKBOX_ERASE
 beeper -CAM_CONNECTION_OPEN
 beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
 
 # beacon
 beacon RX_LOST
@@ -43,8 +45,8 @@ map TAER1234
 # aux
 aux 0 0 0 1700 2100 0 0
 aux 1 13 1 900 1300 0 0
-aux 2 35 1 900 1300 0 0
-aux 3 49 1 1700 2100 0 0
+aux 2 13 0 900 900 0 35
+aux 3 35 1 1700 2100 0 0
 
 # vtxtable
 vtxtable bands 6
@@ -60,13 +62,13 @@ vtxtable powervalues 14 23 0
 vtxtable powerlabels 25 200 0
 
 # vtx
-vtx 0 2 0 0 3 900 1300
+vtx 0 2 0 0 3 1700 2100
 vtx 1 2 0 0 1 1300 1700
-vtx 2 2 0 0 1 1700 2100
+vtx 2 2 0 0 1 900 1300
 
 # rxfail
 rxfail 4 s 750
-rxfail 6 s 1000
+rxfail 6 s 2000
 
 # master
 set gyro_lpf1_static_hz = 0
@@ -76,12 +78,13 @@ set dyn_notch_min_hz = 125
 set dyn_notch_max_hz = 650
 set gyro_lpf1_dyn_min_hz = 500
 set gyro_lpf1_dyn_max_hz = 1000
-set acc_calibration = -131,-58,-14,1
+set acc_calibration = -22,-19,200,1
 set baro_hardware = NONE
 set min_check = 1010
 set max_check = 1995
 set rc_smoothing_auto_factor = 25
 set rc_smoothing_auto_factor_throttle = 25
+set blackbox_sample_rate = 1/2
 set blackbox_device = NONE
 set blackbox_disable_pids = ON
 set blackbox_disable_rc = ON
@@ -95,16 +98,18 @@ set blackbox_disable_acc = ON
 set blackbox_disable_debug = ON
 set blackbox_disable_motors = ON
 set blackbox_disable_rpm = ON
-set motor_kv = 2070
+set motor_kv = 2550
 set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
 set bat_capacity = 1500
 set vbat_max_cell_voltage = 438
 set vbat_min_cell_voltage = 340
-set ibata_scale = 180
+set vbat_scale = 112
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set rpm_limit = ON
-set rpm_limit_value = 24000
+set rpm_limit_value = 27800
+set pid_process_denom = 2
 set simplified_gyro_filter = OFF
 set report_cell_voltage = ON
 set osd_units = IMPERIAL
@@ -113,14 +118,14 @@ set osd_rssi_dbm_alarm = -94
 set osd_core_temp_alarm = 82
 set osd_show_spec_prearm = OFF
 set osd_tim1 = 2577
-set osd_vbat_pos = 535
+set osd_vbat_pos = 2551
 set osd_rssi_dbm_pos = 3147
 set osd_throttle_pos = 3179
 set osd_vtx_channel_pos = 2615
-set osd_mah_drawn_pos = 246
-set osd_pilot_name_pos = 2581
+set osd_crosshairs_pos = 2360
+set osd_pilot_name_pos = 532
 set osd_warnings_pos = 14740
-set osd_avg_cell_voltage_pos = 2551
+set osd_avg_cell_voltage_pos = 2519
 set osd_disarmed_pos = 2390
 set osd_rate_profile_name_pos = 3083
 set osd_pid_profile_name_pos = 3115
@@ -133,22 +138,24 @@ set vtx_band = 5
 set vtx_channel = 8
 set vtx_power = 3
 set vtx_freq = 5917
+set displayport_msp_fonts = 0,0,0,0
+set gyro_1_sensor_align = DEFAULT
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 78
-set stats_total_time_s = 5278
-set craft_name = MYN HWK
-set pilot_name = Mayan Hawk
-set extra_100_throttle = SQUAWK
+set stats_total_flights = 96
+set stats_total_time_s = 5675
+set craft_name = Run Liz
+set pilot_name = Running Lizard
+set extra_100_throttle = AAAHHH
 set extra_fc_hot_warning = IM COOKIN
 set extra_turtle_mode_warning = GET UP
 set extra_low_battery_warning = ON FUMES
-set extra_armed_warning = MEEP MEEP
+set extra_armed_warning = RUNNING LIZARD
 
 profile 0
 
 # profile 0
-set profile_name = MYN HWK
+set profile_name = RUN LIZ
 set dterm_lpf1_dyn_expo = 7
 set iterm_relax_cutoff = 45
 set iterm_limit = 500
@@ -186,7 +193,7 @@ profile 0
 rateprofile 0
 
 # rateprofile 0
-set rateprofile_name = MH 2
+set rateprofile_name = MH X
 set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
@@ -194,14 +201,14 @@ set yaw_rc_rate = 100
 set roll_expo = 1
 set pitch_expo = 1
 set yaw_expo = 1
-set roll_srate = 63
+set roll_srate = 60
 set pitch_srate = 59
 set yaw_srate = 59
 
 rateprofile 1
 
 # rateprofile 1
-set rateprofile_name = RL n
+set rateprofile_name = RL 2
 set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
@@ -214,4 +221,4 @@ set pitch_srate = 43
 set yaw_srate = 43
 
 # restore original rateprofile selection
-rateprofile 0
+rateprofile 1

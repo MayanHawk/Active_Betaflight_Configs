@@ -1,0 +1,301 @@
+# INAV/SPEEDYBEEF405WING 8.0.1 Mar 28 2025 / 09:52:26 (ae47bcba)
+# GCC-13.2.1 20231009
+
+# Timer overrides
+timer_output_mode 2 SERVOS
+timer_output_mode 7 MOTORS
+
+# Outputs [servo]
+servo 1 1000 2000 1500 -100
+servo 2 1000 2000 1500 -100
+
+# features
+feature GPS
+feature PWM_OUTPUT_ENABLE
+feature FW_AUTOTRIM
+
+# blackbox
+blackbox -NAV_ACC
+blackbox NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
+blackbox SERVOS
+
+# Receiver: Channel map
+map TAER
+
+# Ports
+serial 2 2 115200 57600 0 115200
+serial 4 33554432 115200 115200 0 115200
+
+# Modes [aux]
+aux 0 0 0 1700 2100
+aux 1 1 3 900 1300
+aux 2 11 2 900 1300
+aux 3 10 2 1700 2100
+aux 4 62 3 900 1700
+aux 5 63 3 1300 1700
+
+# Mission Control Waypoints [wp]
+#wp 0 invalid
+
+# OSD [osd_layout]
+osd_layout 0 0 35 2 H
+osd_layout 0 1 12 8 H
+osd_layout 0 7 23 14 V
+osd_layout 0 9 35 3 V
+osd_layout 0 11 33 13 V
+osd_layout 0 12 11 14 V
+osd_layout 0 13 12 2 V
+osd_layout 0 14 35 1 V
+osd_layout 0 15 11 1 V
+osd_layout 0 20 29 16 V
+osd_layout 0 21 11 16 V
+osd_layout 0 22 24 2 V
+osd_layout 0 23 21 3 V
+osd_layout 0 28 33 14 V
+osd_layout 0 30 11 15 V
+osd_layout 0 31 35 2 V
+osd_layout 0 32 11 13 V
+osd_layout 0 34 20 1 V
+osd_layout 0 97 20 16 H
+
+# master
+set gyro_main_lpf_hz = 80
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_mode = 3D
+set gyro_zero_x = -5
+set gyro_zero_y = -2
+set gyro_zero_z = -1
+set ins_gravity_cmss =  981.659
+set gyro_adaptive_filter_min_hz = 20
+set acc_hardware = ICM42605
+set acczero_x = -2
+set acczero_y = -3
+set acczero_z = 14
+set accgain_x = 4095
+set accgain_y = 4100
+set accgain_z = 4098
+set align_mag = CW270FLIP
+set mag_hardware = LIS3MDL
+set magzero_x = -543
+set magzero_y = -265
+set magzero_z = -657
+set maggain_x = 735
+set maggain_y = 744
+set maggain_z = 652
+set align_mag_pitch = -1800
+set align_mag_yaw = 900
+set baro_hardware = SPL06
+set blackbox_rate_denom = 2
+set motor_pwm_protocol = STANDARD
+set align_board_roll = -2
+set align_board_pitch = 4
+set servo_pwm_rate = 160
+set servo_lpf_hz = 30
+set small_angle = 180
+set applied_defaults = 3
+set gps_ublox_use_galileo = ON
+set gps_ublox_use_beidou = ON
+set gps_ublox_use_glonass = ON
+set airmode_type = STICK_CENTER_ONCE
+set nav_disarm_on_landing = OFF
+set nav_wp_radius = 800
+set nav_wp_max_safe_distance = 500
+set nav_rth_allow_landing = FS_ONLY
+set nav_rth_altitude = 5000
+set nav_fw_control_smoothness = 2
+set nav_fw_launch_motor_delay = 100
+set nav_fw_launch_max_altitude = 5000
+set nav_fw_launch_climb_angle = 25
+set osd_video_system = HDZERO
+set osd_units = IMPERIAL
+set i2c_speed = 800KHZ
+set vtx_band = 5
+set vtx_channel = 8
+
+# control_profile
+control_profile 1
+
+set fw_p_pitch = 15
+set fw_i_pitch = 5
+set fw_d_pitch = 5
+set fw_ff_pitch = 80
+set fw_p_roll = 15
+set fw_i_roll = 3
+set fw_d_roll = 7
+set fw_p_yaw = 50
+set fw_i_yaw = 0
+set fw_d_yaw = 20
+set fw_ff_yaw = 255
+set dterm_lpf_hz = 10
+set dterm_lpf_type = PT3
+set fw_turn_assist_pitch_gain =  0.400
+set nav_fw_pos_z_p = 25
+set nav_fw_pos_z_d = 8
+set nav_fw_pos_xy_p = 55
+set mc_iterm_relax = RPY
+set d_boost_min =  1.000
+set d_boost_max =  1.000
+set d_boost_gyro_delta_lpf_hz = 60
+set antigravity_gain =  2.000
+set antigravity_accelerator =  5.000
+set fw_level_pitch_trim =  5.000
+set smith_predictor_delay =  1.500
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set tpa_on_yaw = ON
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_rate = 18
+set pitch_rate = 9
+set yaw_rate = 3
+
+# control_profile
+control_profile 2
+
+set mc_d_pitch = 0
+set mc_d_roll = 0
+set fw_p_pitch = 0
+set fw_i_pitch = 5
+set fw_ff_pitch = 80
+set fw_p_roll = 15
+set fw_i_roll = 3
+set fw_p_yaw = 50
+set fw_i_yaw = 0
+set fw_d_yaw = 20
+set fw_ff_yaw = 255
+set fw_d_level = 0
+set dterm_lpf_hz = 60
+set dterm_lpf_type = PT3
+set fw_turn_assist_pitch_gain =  0.400
+set nav_fw_pos_z_p = 25
+set nav_fw_pos_z_d = 8
+set nav_fw_pos_xy_p = 55
+set mc_iterm_relax = RPY
+set d_boost_min =  0.800
+set d_boost_max =  1.200
+set d_boost_gyro_delta_lpf_hz = 60
+set antigravity_gain =  2.000
+set antigravity_accelerator =  5.000
+set fw_level_pitch_trim =  5.000
+set smith_predictor_delay =  1.500
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set tpa_on_yaw = ON
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_rate = 18
+set pitch_rate = 18
+set yaw_rate = 9
+
+# control_profile
+control_profile 3
+
+set fw_p_pitch = 15
+set fw_i_pitch = 5
+set fw_d_pitch = 5
+set fw_ff_pitch = 80
+set fw_p_roll = 15
+set fw_i_roll = 3
+set fw_d_roll = 7
+set fw_p_yaw = 50
+set fw_i_yaw = 0
+set fw_d_yaw = 20
+set fw_ff_yaw = 255
+set dterm_lpf_hz = 10
+set fw_turn_assist_pitch_gain =  0.400
+set nav_fw_pos_z_p = 25
+set nav_fw_pos_z_d = 8
+set nav_fw_pos_xy_p = 55
+set d_boost_min =  1.000
+set d_boost_max =  1.000
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_rate = 18
+set pitch_rate = 9
+set yaw_rate = 3
+
+# mixer_profile
+mixer_profile 1
+
+set platform_type = AIRPLANE
+set has_flaps = ON
+set model_preview_type = 26
+set mixer_pid_profile_linking = ON
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0  1.000  0.000  0.000  1.000
+mmix 1  1.000  0.000  0.000 -1.000
+mmix 2  1.000  0.000  0.000  0.000
+
+# Mixer: servo mixer
+smix reset
+
+smix 0 1 1 100 0 -1
+smix 1 2 0 100 0 -1
+smix 2 3 29 87 0 -1
+smix 3 4 29 -85 0 -1
+
+# mixer_profile
+mixer_profile 2
+
+set platform_type = TRICOPTER
+set model_preview_type = 1
+set motorstop_on_low = OFF
+set mixer_pid_profile_linking = ON
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0  1.000  1.000 -0.667  0.000
+mmix 1  1.000 -1.000 -0.667  0.000
+mmix 2  1.000  0.000  1.330  0.000
+
+# Mixer: servo mixer
+smix reset
+
+smix 0 3 2 -90 0 -1
+smix 1 4 2 -90 0 -1
+smix 2 3 29 -87 0 -1
+smix 3 4 29 85 0 -1
+smix 4 2 0 50 0 -1
+smix 5 1 1 50 0 -1
+smix 6 3 38 60 0 -1
+smix 7 4 38 -60 0 -1
+
+# battery_profile
+battery_profile 1
+
+set vbat_cell_detect_voltage = 435
+set vbat_min_cell_voltage = 340
+set vbat_warning_cell_voltage = 360
+set throttle_idle =  5.000
+
+# battery_profile
+battery_profile 2
+
+set throttle_idle =  5.000
+
+# battery_profile
+battery_profile 3
+
+set throttle_idle =  5.000
+
+# restore original profile selection
+control_profile 2
+mixer_profile 2
+battery_profile 1
