@@ -1,0 +1,206 @@
+# Betaflight / RADIX (RADIX) 4.5.1 Aug 20 2024 / 15:41:12 (c4f8d8b2b) MSP API: 1.46
+
+# feature
+feature TELEMETRY
+feature LED_STRIP
+
+# serial
+serial 3 131073 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -DISARMING
+beeper -ARMING
+beeper -ARMING_GPS_FIX
+beeper -BAT_CRIT_LOW
+beeper -BAT_LOW
+beeper -GPS_STATUS
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 13 1 900 1300 0 0
+aux 2 35 1 900 1300 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWBAND  L CUSTOM  5362 5399 5436 5473 5510 5547 5584 5621
+vtxtable powerlevels 3
+vtxtable powervalues 14 23 0
+vtxtable powerlabels 25 200 0
+
+# vtx
+vtx 0 2 0 0 3 900 1300
+vtx 1 2 0 0 1 1300 1700
+vtx 2 2 0 0 1 1700 2100
+
+# rxfail
+rxfail 4 s 750
+rxfail 6 s 1000
+
+# master
+set gyro_lpf1_static_hz = 150
+set gyro_lpf2_static_hz = 300
+set dyn_notch_count = 2
+set dyn_notch_max_hz = 550
+set gyro_lpf1_dyn_min_hz = 150
+set gyro_lpf1_dyn_max_hz = 300
+set acc_hardware = NONE
+set acc_calibration = 79,-230,-105,1
+set baro_hardware = NONE
+set min_check = 1010
+set max_check = 1995
+set rc_smoothing_auto_factor = 250
+set rc_smoothing_auto_factor_throttle = 250
+set rc_smoothing_setpoint_cutoff = 6
+set rc_smoothing_feedforward_cutoff = 6
+set rc_smoothing_throttle_cutoff = 20
+set blackbox_device = NONE
+set blackbox_disable_pids = ON
+set blackbox_disable_rc = ON
+set blackbox_disable_setpoint = ON
+set blackbox_disable_bat = ON
+set blackbox_disable_alt = ON
+set blackbox_disable_rssi = ON
+set blackbox_disable_gyro = ON
+set blackbox_disable_gyrounfilt = ON
+set blackbox_disable_acc = ON
+set blackbox_disable_debug = ON
+set blackbox_disable_motors = ON
+set blackbox_disable_rpm = ON
+set blackbox_disable_gps = ON
+set min_throttle = 1000
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set motor_output_reordering = 3,2,1,0,4,5,6,7
+set bat_capacity = 1500
+set vbat_max_cell_voltage = 440
+set vbat_min_cell_voltage = 350
+set vbat_warning_cell_voltage = 360
+set vbat_scale = 121
+set ibata_scale = 194
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set simplified_gyro_filter_multiplier = 60
+set report_cell_voltage = ON
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 33789
+set osd_rssi_dbm_alarm = -94
+set osd_core_temp_alarm = 82
+set osd_tim1 = 2577
+set osd_vbat_pos = 535
+set osd_link_quality_pos = 40
+set osd_link_tx_power_pos = 72
+set osd_rssi_dbm_pos = 3115
+set osd_tim_1_pos = 54
+set osd_tim_2_pos = 3627
+set osd_flymode_pos = 65
+set osd_throttle_pos = 3148
+set osd_vtx_channel_pos = 2615
+set osd_current_pos = 2567
+set osd_mah_drawn_pos = 2536
+set osd_craft_name_pos = 362
+set osd_pidrate_profile_pos = 3182
+set osd_warnings_pos = 14740
+set osd_avg_cell_voltage_pos = 2551
+set osd_disarmed_pos = 2390
+set osd_rate_profile_name_pos = 1035
+set osd_pid_profile_name_pos = 1067
+set osd_total_flights_pos = 3596
+set osd_stat_bitmask = 1610614051
+set osd_displayport_device = MSP
+set osd_canvas_width = 50
+set osd_canvas_height = 18
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 3
+set vtx_freq = 5917
+set vcd_video_system = HD
+set displayport_msp_fonts = 0,0,0,0
+set rpm_filter_harmonics = 2
+set brainfpv_altitude_scale = 0
+set brainfpv_speed_scale = 0
+set brainfpv_map = 0
+set stats_min_armed_time_s = 7
+set stats_total_flights = 9
+set stats_total_time_s = 944
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 90
+set dterm_lpf1_dyn_max_hz = 180
+set dterm_lpf1_static_hz = 90
+set dterm_lpf2_static_hz = 180
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 90
+set iterm_relax_cutoff = 5
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 125
+set p_pitch = 75
+set i_pitch = 134
+set d_pitch = 76
+set f_pitch = 199
+set p_roll = 71
+set i_roll = 127
+set d_roll = 67
+set f_roll = 191
+set p_yaw = 71
+set i_yaw = 127
+set f_yaw = 191
+set d_min_roll = 67
+set d_min_pitch = 76
+set thrust_linear = 20
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 75
+set feedforward_jitter_factor = 13
+set simplified_master_multiplier = 160
+set simplified_d_gain = 140
+set simplified_dmax_gain = 0
+set simplified_dterm_filter_multiplier = 120
+set ez_landing_limit = 5
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 63
+set pitch_srate = 59
+set yaw_srate = 59
+
+# restore original rateprofile selection
+rateprofile 0
