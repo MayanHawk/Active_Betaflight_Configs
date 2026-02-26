@@ -1,11 +1,15 @@
-# Betaflight / RADIX (RADIX) 4.5.1 Aug 20 2024 / 15:41:12 (c4f8d8b2b) MSP API: 1.46
+# Betaflight / STM32F7X2 (F722) 2025.12.2 Feb 14 2026 / 23:28:22 (79065c96b) MSP API: 1.47
+# board_name FOXEERF722V4
+# name: CW 1
 
 # feature
 feature TELEMETRY
 feature LED_STRIP
+feature OSD
 
 # serial
-serial 3 131073 115200 57600 0 115200
+serial UART1 64 115200 57600 0 115200
+serial UART5 131073 115200 57600 0 115200
 
 # beeper
 beeper -GYRO_CALIBRATED
@@ -24,7 +28,6 @@ beeper -ON_USB
 beeper -BLACKBOX_ERASE
 beeper -CAM_CONNECTION_OPEN
 beeper -CAM_CONNECTION_CLOSE
-beeper -RC_SMOOTHING_INIT_FAIL
 
 # beacon
 beacon RX_LOST
@@ -32,6 +35,9 @@ beacon RX_SET
 
 # map
 map TAER1234
+
+# led
+led 0 8,7::CY:10
 
 # aux
 aux 0 0 0 1700 2100 0 0
@@ -47,14 +53,14 @@ vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
 vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
 vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
 vtxtable band 6 LOWBAND  L CUSTOM  5362 5399 5436 5473 5510 5547 5584 5621
-vtxtable powerlevels 3
-vtxtable powervalues 14 23 0
-vtxtable powerlabels 25 200 0
+vtxtable powerlevels 5
+vtxtable powervalues 14 23 27 30 0
+vtxtable powerlabels 25 200 500 MAX 0
 
 # vtx
-vtx 0 2 0 0 3 900 1300
-vtx 1 2 0 0 1 1300 1700
-vtx 2 2 0 0 1 1700 2100
+vtx 0 2 0 0 5 900 1300
+vtx 1 2 0 0 2 1300 1700
+vtx 2 2 0 0 4 1700 2100
 
 # rxfail
 rxfail 4 s 750
@@ -67,31 +73,22 @@ set dyn_notch_count = 2
 set dyn_notch_max_hz = 550
 set gyro_lpf1_dyn_min_hz = 150
 set gyro_lpf1_dyn_max_hz = 300
-set acc_hardware = NONE
-set acc_calibration = 79,-230,-105,1
+set acc_calibration = -57,19,-191,1
 set baro_hardware = NONE
 set min_check = 1010
 set max_check = 1995
-set rc_smoothing_auto_factor = 250
-set rc_smoothing_auto_factor_throttle = 250
-set rc_smoothing_setpoint_cutoff = 6
-set rc_smoothing_feedforward_cutoff = 6
-set rc_smoothing_throttle_cutoff = 20
-set blackbox_device = NONE
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
+set blackbox_sample_rate = 1/16
 set blackbox_disable_pids = ON
 set blackbox_disable_rc = ON
 set blackbox_disable_setpoint = ON
 set blackbox_disable_bat = ON
 set blackbox_disable_alt = ON
 set blackbox_disable_rssi = ON
-set blackbox_disable_gyro = ON
-set blackbox_disable_gyrounfilt = ON
 set blackbox_disable_acc = ON
 set blackbox_disable_debug = ON
 set blackbox_disable_motors = ON
-set blackbox_disable_rpm = ON
-set blackbox_disable_gps = ON
-set min_throttle = 1000
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
 set motor_poles = 12
@@ -100,15 +97,14 @@ set bat_capacity = 1500
 set vbat_max_cell_voltage = 440
 set vbat_min_cell_voltage = 350
 set vbat_warning_cell_voltage = 360
-set vbat_scale = 121
-set ibata_scale = 194
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
 set small_angle = 180
+set pid_process_denom = 2
 set simplified_gyro_filter_multiplier = 60
 set report_cell_voltage = ON
 set osd_units = IMPERIAL
-set osd_warn_bitmask = 33789
+set osd_warn_bitmask = 381
 set osd_rssi_dbm_alarm = -94
 set osd_core_temp_alarm = 82
 set osd_tim1 = 2577
@@ -123,7 +119,8 @@ set osd_throttle_pos = 3148
 set osd_vtx_channel_pos = 2615
 set osd_current_pos = 2567
 set osd_mah_drawn_pos = 2536
-set osd_craft_name_pos = 362
+set osd_craft_name_pos = 2107
+set osd_pilot_name_pos = 2104
 set osd_pidrate_profile_pos = 3182
 set osd_warnings_pos = 14740
 set osd_avg_cell_voltage_pos = 2551
@@ -132,22 +129,15 @@ set osd_rate_profile_name_pos = 1035
 set osd_pid_profile_name_pos = 1067
 set osd_total_flights_pos = 3596
 set osd_stat_bitmask = 1610614051
-set osd_displayport_device = MSP
-set osd_canvas_width = 50
-set osd_canvas_height = 18
 set vtx_band = 5
 set vtx_channel = 8
-set vtx_power = 3
+set vtx_power = 5
 set vtx_freq = 5917
-set vcd_video_system = HD
 set displayport_msp_fonts = 0,0,0,0
 set rpm_filter_harmonics = 2
-set brainfpv_altitude_scale = 0
-set brainfpv_speed_scale = 0
-set brainfpv_map = 0
 set stats_min_armed_time_s = 7
-set stats_total_flights = 9
-set stats_total_time_s = 944
+set craft_name = CW 1
+set pilot_name = KB
 
 profile 0
 
@@ -173,17 +163,15 @@ set f_roll = 191
 set p_yaw = 71
 set i_yaw = 127
 set f_yaw = 191
-set d_min_roll = 67
-set d_min_pitch = 76
+set d_max_roll = 67
+set d_max_pitch = 76
 set thrust_linear = 20
-set feedforward_averaging = 2_POINT
-set feedforward_smooth_factor = 75
-set feedforward_jitter_factor = 13
+set feedforward_jitter_factor = 3
+set feedforward_boost = 18
 set simplified_master_multiplier = 160
 set simplified_d_gain = 140
-set simplified_dmax_gain = 0
+set simplified_d_max_gain = 0
 set simplified_dterm_filter_multiplier = 120
-set ez_landing_limit = 5
 
 # restore original profile selection
 profile 0
