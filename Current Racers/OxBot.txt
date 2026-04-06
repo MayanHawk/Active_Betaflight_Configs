@@ -68,13 +68,14 @@ rxfail 4 s 750
 rxfail 6 s 1000
 
 # master
+set gyro_lpf1_static_hz = 0
 set dyn_notch_count = 1
 set dyn_notch_q = 500
+set dyn_notch_max_hz = 650
+set gyro_lpf1_dyn_min_hz = 0
 set acc_calibration = 0,-4,40,1
 set min_check = 1010
 set max_check = 1995
-set rc_smoothing_auto_factor = 25
-set rc_smoothing_auto_factor_throttle = 25
 set blackbox_disable_bat = ON
 set blackbox_disable_rssi = ON
 set blackbox_disable_attitude = ON
@@ -101,19 +102,47 @@ set osd_total_flights_pos = 3629
 set osd_stat_bitmask = 1887519779
 set debug_mode = CHIRP
 set vtx_band = 5
-set vtx_channel = 1
+set vtx_channel = 7
 set vtx_power = 3
-set vtx_freq = 5658
+set vtx_freq = 5880
 set displayport_msp_fonts = 0,0,0,0
+set rpm_filter_weights = 100,20,100
+set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
+set stats_total_flights = 3
+set stats_total_time_s = 274
 set craft_name = MYN HWK
 set pilot_name = Mayan Hawk
 
 profile 0
 
 # profile 0
-set feedforward_jitter_factor = 3
-set feedforward_boost = 18
+set dterm_lpf1_dyn_expo = 7
+set iterm_relax_cutoff = 45
+set throttle_boost = 2
+set p_pitch = 39
+set i_pitch = 82
+set d_pitch = 24
+set f_pitch = 124
+set p_roll = 36
+set i_roll = 74
+set d_roll = 22
+set f_roll = 113
+set d_max_roll = 28
+set d_max_pitch = 31
+set thrust_linear = 20
+set feedforward_jitter_factor = 0
+set simplified_pids_mode = RP
+set simplified_master_multiplier = 90
+set simplified_i_gain = 115
+set simplified_d_gain = 85
+set simplified_pi_gain = 90
+set simplified_d_max_gain = 75
+set simplified_feedforward_gain = 105
+set simplified_pitch_d_gain = 95
+set simplified_pitch_pi_gain = 105
+set tpa_rate = 70
+set tpa_breakpoint = 1250
 
 # restore original profile selection
 profile 0
