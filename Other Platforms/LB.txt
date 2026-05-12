@@ -1,0 +1,231 @@
+# Betaflight / STM32F7X2 (S7X2) 4.5.2 Mar 20 2025 / 03:51:23 (024f8e13d) MSP API: 1.46
+# board_name IFLIGHT_BLITZ_F722
+# name: PSA FPV-102
+
+# feature
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+feature ESC_SENSOR
+
+# serial
+serial 0 8192 115200 57600 0 115200
+serial 1 64 115200 57600 0 115200
+serial 5 1024 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -BAT_CRIT_LOW
+beeper -BAT_LOW
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# led
+led 0 0,0::C:2
+led 1 1,0::C:2
+led 2 2,0::C:2
+led 3 3,0::C:2
+
+# color
+color 5 91,0,255
+color 6 108,0,255
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 13 3 1700 2100 0 0
+aux 3 36 2 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BAND_A   A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BAND_B   B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BAND_E   E CUSTOM  5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 BAND_F   F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 BAND_R   R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 25 400 1000 2500
+vtxtable powerlabels 25 400 1W 2W5
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 0
+set gyro_notch1_hz = 65
+set gyro_notch1_cutoff = 45
+set dyn_notch_count = 2
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 60
+set dyn_notch_max_hz = 240
+set gyro_lpf1_dyn_min_hz = 200
+set gyro_lpf1_dyn_max_hz = 400
+set acc_calibration = -23,0,-2,1
+set rc_smoothing_auto_factor = 52
+set rc_smoothing_setpoint_cutoff = 25
+set rc_smoothing_feedforward_cutoff = 25
+set blackbox_sample_rate = 1/16
+set dshot_idle_value = 600
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set failsafe_delay = 4
+set vbat_max_cell_voltage = 440
+set ibata_offset = -19000
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_sbas_mode = AUTO
+set gps_ublox_use_galileo = ON
+set gps_rescue_descend_rate = 300
+set gps_rescue_min_sats = 5
+set yaw_deadband = 5
+set pid_process_denom = 2
+set simplified_gyro_filter = OFF
+set simplified_gyro_filter_multiplier = 80
+set report_cell_voltage = ON
+set osd_warn_bitmask = 39773
+set osd_rssi_dbm_alarm = -100
+set osd_cap_alarm = 20000
+set osd_tim1 = 1
+set osd_tim2 = 1
+set osd_rssi_pos = 88
+set osd_link_quality_pos = 86
+set osd_link_tx_power_pos = 24
+set osd_rssi_dbm_pos = 2104
+set osd_tim_2_pos = 2487
+set osd_remaining_time_estimate_pos = 440
+set osd_flymode_pos = 398
+set osd_throttle_pos = 2136
+set osd_vtx_channel_pos = 18817
+set osd_current_pos = 288
+set osd_mah_drawn_pos = 2465
+set osd_craft_name_pos = 2081
+set osd_gps_speed_pos = 234
+set osd_gps_lon_pos = 18897
+set osd_gps_lat_pos = 18884
+set osd_gps_sats_pos = 2145
+set osd_home_dir_pos = 2126
+set osd_home_dist_pos = 2093
+set osd_flight_dist_pos = 2168
+set osd_altitude_pos = 18840
+set osd_power_pos = 388
+set osd_pidrate_profile_pos = 2113
+set osd_warnings_pos = 14634
+set osd_avg_cell_voltage_pos = 2444
+set osd_disarmed_pos = 2315
+set osd_rtc_date_time_pos = 2054
+set osd_total_flights_pos = 97
+set osd_stat_bitmask = 12973
+set osd_displayport_device = MAX7456
+set osd_camera_frame_width = 30
+set osd_camera_frame_height = 16
+set osd_canvas_width = 30
+set osd_canvas_height = 16
+set debug_mode = GYRO_SCALED
+set vtx_band = 5
+set vtx_channel = 2
+set vtx_power = 4
+set vtx_freq = 5695
+set vcd_video_system = PAL
+set rpm_filter_min_hz = 70
+set craft_name = PSA FPV-102
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 67
+set dterm_lpf1_dyn_max_hz = 135
+set dterm_lpf1_type = BIQUAD
+set dterm_lpf1_static_hz = 67
+set dterm_lpf2_static_hz = 180
+set dterm_notch_hz = 65
+set dterm_notch_cutoff = 45
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 120
+set iterm_relax_type = GYRO
+set iterm_relax_cutoff = 5
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 50
+set p_pitch = 65
+set i_pitch = 98
+set d_pitch = 113
+set f_pitch = 57
+set p_roll = 56
+set i_roll = 85
+set d_roll = 82
+set f_roll = 50
+set p_yaw = 56
+set i_yaw = 85
+set f_yaw = 50
+set angle_p_gain = 30
+set angle_limit = 50
+set d_min_roll = 65
+set d_min_pitch = 88
+set thrust_linear = 20
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 45
+set feedforward_jitter_factor = 8
+set dyn_idle_min_rpm = 25
+set simplified_master_multiplier = 140
+set simplified_i_gain = 85
+set simplified_d_gain = 155
+set simplified_pi_gain = 90
+set simplified_dmax_gain = 80
+set simplified_feedforward_gain = 30
+set simplified_pitch_d_gain = 120
+set simplified_pitch_pi_gain = 110
+set simplified_dterm_filter = OFF
+set simplified_dterm_filter_multiplier = 90
+set tpa_mode = PD
+set tpa_rate = 50
+set tpa_breakpoint = 1200
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 18
+set pitch_rc_rate = 18
+set yaw_rc_rate = 18
+set roll_expo = 70
+set pitch_expo = 70
+set yaw_expo = 70
+set roll_srate = 45
+set pitch_srate = 45
+set yaw_srate = 40
+
+rateprofile 1
+
+# rateprofile 1
+set rateprofile_name = KB
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 63
+set pitch_srate = 59
+set yaw_srate = 59
+
+# restore original rateprofile selection
+rateprofile 1
+
+# save configuration
