@@ -1,0 +1,191 @@
+# Betaflight / STM32H743 (SH74) 4.5.3.KAACK_V17 Sep 19 2025 / 12:09:03 (efef89735) MSP API: 1.46
+# name: MYN HWK
+# board_name MATEKH743
+
+# feature
+feature GPS
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+feature ESC_SENSOR
+
+# serial
+serial 1 2 115200 115200 0 115200
+serial 3 131073 115200 57600 0 115200
+serial 7 1024 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -ARMING_GPS_FIX
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -DISARM_REPEAT
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+
+# beacon
+beacon RX_LOST
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 13 1 900 1300 0 0
+aux 2 35 1 900 1300 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWBAND  L CUSTOM     0    0    0    0    0    0    0    0
+vtxtable powerlevels 5
+vtxtable powervalues 14 23 27 30 0
+vtxtable powerlabels 25 200 500 MAX 0
+
+# vtx
+vtx 0 2 0 0 5 900 1300
+vtx 1 2 0 0 4 1300 1700
+vtx 2 2 0 0 3 1700 2100
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 800
+set dyn_notch_count = 2
+set dyn_notch_q = 400
+set dyn_notch_min_hz = 90
+set dyn_notch_max_hz = 800
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 0
+set acc_lpf_hz = 10
+set acc_calibration = -42,-25,-82,1
+set baro_hardware = NONE
+set min_check = 1010
+set max_check = 1995
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
+set motor_kv = 2550
+set dshot_bidir = ON
+set motor_output_reordering = 1,0,3,2,4,5,6,7
+set bat_capacity = 1550
+set vbat_max_cell_voltage = 438
+set ibata_scale = 85
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set gps_auto_config = OFF
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set simplified_gyro_filter_multiplier = 160
+set report_cell_voltage = ON
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 33661
+set osd_rssi_dbm_alarm = -106
+set osd_core_temp_alarm = 75
+set osd_show_spec_prearm = OFF
+set osd_vbat_pos = 65
+set osd_link_quality_pos = 1067
+set osd_rssi_dbm_pos = 3115
+set osd_flymode_pos = 87
+set osd_g_force_pos = 3595
+set osd_throttle_pos = 3147
+set osd_vtx_channel_pos = 2614
+set osd_current_pos = 3627
+set osd_mah_drawn_pos = 3585
+set osd_craft_name_pos = 384
+set osd_pilot_name_pos = 2581
+set osd_warnings_pos = 2420
+set osd_avg_cell_voltage_pos = 2551
+set osd_disarmed_pos = 2357
+set osd_rate_profile_name_pos = 534
+set osd_pid_profile_name_pos = 2081
+set osd_total_flights_pos = 1131
+set osd_spec_logo_pos = 14403
+set osd_stat_bitmask = 1076905605
+set osd_canvas_width = 50
+set osd_canvas_height = 18
+set vtx_band = 5
+set vtx_channel = 4
+set vtx_power = 4
+set vtx_freq = 5769
+set displayport_msp_fonts = 0,0,0,0
+set gyro_1_sensor_align = CW180
+set gyro_1_align_pitch = 0
+set gyro_1_align_yaw = 1800
+set gyro_2_sensor_align = CW180
+set gyro_2_align_pitch = 0
+set gyro_2_align_yaw = 1800
+set rpm_filter_q = 1000
+set rpm_filter_fade_range_hz = 100
+set stats_total_flights = 10
+set stats_total_time_s = 1608
+set craft_name = MYN HWK
+set pilot_name = Mayan Hawk
+set extra_100_throttle = SQUAWK
+set extra_fc_hot_warning = IM COOKIN
+set extra_turtle_mode_warning = GET UP
+set extra_low_battery_warning = START WALKING
+set extra_armed_warning = MEEP MEEP
+set extra_land_now_warning = REST IN PIECES
+
+profile 0
+
+# profile 0
+set profile_name = MLEM
+set dterm_lpf1_dyn_min_hz = 0
+set dterm_lpf1_dyn_max_hz = 0
+set dterm_lpf1_dyn_expo = 0
+set dterm_lpf1_static_hz = 105
+set dterm_lpf2_static_hz = 210
+set anti_gravity_gain = 120
+set p_pitch = 77
+set i_pitch = 117
+set d_pitch = 44
+set f_pitch = 168
+set p_roll = 64
+set i_roll = 97
+set d_roll = 39
+set f_roll = 140
+set p_yaw = 64
+set i_yaw = 97
+set f_yaw = 140
+set d_min_roll = 39
+set d_min_pitch = 44
+set motor_output_limit = 63
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 3
+set feedforward_boost = 18
+set simplified_master_multiplier = 130
+set simplified_i_gain = 85
+set simplified_pi_gain = 110
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 90
+set simplified_pitch_pi_gain = 115
+set simplified_dterm_filter_multiplier = 140
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 63
+set pitch_srate = 59
+set yaw_srate = 59
+
+# restore original rateprofile selection
+rateprofile 0
