@@ -1,5 +1,5 @@
+# RIP Foamy
 # Betaflight / STM32F7X2 (S7X2) 4.5.2.KAACK_V15 Jan 15 2025 / 18:29:13 (e5abc7db3) MSP API: 1.46
-# board_name FOXEERF722V4
 # name: MYN HWK
 
 # feature
@@ -102,7 +102,6 @@ set vbat_max_cell_voltage = 438
 set vbat_min_cell_voltage = 340
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
-set rpm_limit = ON
 set rpm_limit_value = 28500
 set pid_process_denom = 2
 set simplified_gyro_filter = OFF
@@ -137,8 +136,8 @@ set rpm_filter_weights = 100,20,100
 set rpm_filter_min_hz = 150
 set rpm_filter_fade_range_hz = 100
 set stats_min_armed_time_s = 7
-set stats_total_flights = 9
-set stats_total_time_s = 1008
+set stats_total_flights = 24
+set stats_total_time_s = 2123
 set craft_name = MYN HWK
 set pilot_name = Mayan Hawk
 set extra_100_throttle = SQUAWK
@@ -183,6 +182,12 @@ set tpa_rate = 70
 set tpa_breakpoint = 1250
 set ez_landing_limit = 5
 
+profile 1
+
+profile 2
+
+profile 3
+
 # restore original profile selection
 profile 0
 
@@ -216,5 +221,13 @@ set roll_srate = 35
 set pitch_srate = 43
 set yaw_srate = 43
 
+rateprofile 2
+
+rateprofile 3
+
 # restore original rateprofile selection
 rateprofile 0
+
+# save configuration
+save
+# 
