@@ -1,4 +1,7 @@
-# INAV/SPEEDYBEEF405WING 8.0.1 Mar 28 2025 / 09:52:26 (ae47bcba) 
+                    diff all
+
+# version
+# INAV/SPEEDYBEEF405WING 9.1.0 Jul  8 2026 / 02:13:52 (15317503) 
 # GCC-13.2.1 20231009
 
 # start the command batch
@@ -53,7 +56,7 @@ map TAER
 
 # Ports
 serial 2 2 115200 57600 0 115200
-serial 4 2048 115200 115200 0 115200
+serial 4 33554432 115200 115200 0 115200
 
 # LEDs
 
@@ -64,7 +67,7 @@ serial 4 2048 115200 115200 0 115200
 # Modes [aux]
 aux 0 0 0 1700 2100
 aux 1 1 3 900 1300
-aux 2 12 3 1700 2100
+aux 2 12 3 2025 2100
 aux 3 11 2 900 1300
 aux 4 10 2 1700 2100
 aux 5 62 3 900 1700
@@ -80,26 +83,26 @@ aux 6 63 3 1300 1700
 #wp 0 invalid
 
 # OSD [osd_layout]
-osd_layout 0 0 26 1 V
+osd_layout 0 0 35 1 V
 osd_layout 0 1 12 8 H
-osd_layout 0 7 14 12 V
-osd_layout 0 9 24 2 V
+osd_layout 0 7 24 16 V
+osd_layout 0 9 35 2 V
 osd_layout 0 10 12 11 H
-osd_layout 0 11 14 11 V
-osd_layout 0 12 10 10 V
-osd_layout 0 13 2 2 V
-osd_layout 0 14 10 1 V
-osd_layout 0 15 1 1 V
-osd_layout 0 20 0 12 V
-osd_layout 0 21 0 11 V
-osd_layout 0 22 14 3 V
-osd_layout 0 23 11 2 V
-osd_layout 0 28 24 11 V
-osd_layout 0 30 2 0 V
-osd_layout 0 31 15 1 V
-osd_layout 0 32 16 10 V
+osd_layout 0 11 24 15 V
+osd_layout 0 12 20 14 V
+osd_layout 0 13 10 2 V
+osd_layout 0 14 21 1 V
+osd_layout 0 15 10 1 V
+osd_layout 0 20 10 16 V
+osd_layout 0 21 10 15 V
+osd_layout 0 22 24 3 V
+osd_layout 0 23 23 2 V
+osd_layout 0 28 34 15 V
+osd_layout 0 30 11 0 V
+osd_layout 0 31 26 1 V
+osd_layout 0 32 26 14 V
 osd_layout 0 34 20 1 H
-osd_layout 0 48 24 12 V
+osd_layout 0 48 34 16 V
 osd_layout 0 85 12 3 H
 osd_layout 0 97 20 16 H
 osd_layout 0 109 23 10 H
@@ -121,7 +124,7 @@ set dynamic_gyro_notch_mode = 3D
 set gyro_zero_x = -6
 set gyro_zero_y = -2
 set gyro_zero_z = -2
-set ins_gravity_cmss =  981.844
+set ins_gravity_cmss =  981.380
 set gyro_adaptive_filter_min_hz = 20
 set acc_hardware = ICM42605
 set acczero_x = -2
@@ -143,14 +146,13 @@ set align_mag_yaw = 900
 set baro_hardware = SPL06
 set blackbox_rate_denom = 2
 set motor_pwm_protocol = STANDARD
+set failsafe_procedure = RTH
 set align_board_roll = -2
 set align_board_pitch = 4
 set servo_pwm_rate = 160
 set servo_lpf_hz = 30
 set small_angle = 180
 set applied_defaults = 3
-set gps_ublox_use_galileo = ON
-set gps_ublox_use_beidou = ON
 set gps_ublox_use_glonass = ON
 set airmode_type = STICK_CENTER_ONCE
 set nav_disarm_on_landing = OFF
@@ -162,7 +164,7 @@ set nav_fw_control_smoothness = 2
 set nav_fw_launch_motor_delay = 100
 set nav_fw_launch_max_altitude = 5000
 set nav_fw_launch_climb_angle = 25
-set osd_video_system = NTSC
+set osd_video_system = HDZERO
 set osd_units = IMPERIAL
 set osd_coordinate_digits = 8
 set i2c_speed = 800KHZ
@@ -277,7 +279,6 @@ mixer_profile 1
 set platform_type = AIRPLANE
 set has_flaps = ON
 set model_preview_type = 26
-set mixer_pid_profile_linking = ON
 
 # Mixer: motor mixer
 
@@ -301,7 +302,7 @@ set platform_type = TRICOPTER
 set has_flaps = ON
 set model_preview_type = 1
 set motorstop_on_low = OFF
-set mixer_pid_profile_linking = ON
+set mixer_control_profile_linking = ON
 
 # Mixer: motor mixer
 
@@ -343,10 +344,8 @@ set throttle_idle =  5.000
 
 # restore original profile selection
 control_profile 2
-mixer_profile 2
+mixer_profile 1
 battery_profile 1
 
 # save configuration
 save
-
-# 
