@@ -1,5 +1,13 @@
-# INAV/SPEEDYBEEF405WING 8.0.1 Mar 28 2025 / 09:52:26 (ae47bcba)
+# INAV/SPEEDYBEEF405WING 8.0.1 Mar 28 2025 / 09:52:26 (ae47bcba) 
 # GCC-13.2.1 20231009
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults noreboot
+
+# resources
 
 # Timer overrides
 timer_output_mode 2 SERVOS
@@ -9,10 +17,20 @@ timer_output_mode 7 MOTORS
 servo 1 1000 2000 1500 -100
 servo 2 1000 2000 1500 -100
 
+# safehome
+
+# Fixed Wing Approach
+
+# geozone
+
+# geozone vertices
+
 # features
 feature GPS
 feature PWM_OUTPUT_ENABLE
 feature FW_AUTOTRIM
+
+# beeper
 
 # blackbox
 blackbox -NAV_ACC
@@ -35,48 +53,75 @@ map TAER
 
 # Ports
 serial 2 2 115200 57600 0 115200
-serial 4 33554432 115200 115200 0 115200
+serial 4 2048 115200 115200 0 115200
+
+# LEDs
+
+# LED color
+
+# LED mode_color
 
 # Modes [aux]
 aux 0 0 0 1700 2100
 aux 1 1 3 900 1300
-aux 2 11 2 900 1300
-aux 3 10 2 1700 2100
-aux 4 62 3 900 1700
-aux 5 63 3 1300 1700
+aux 2 12 3 1700 2100
+aux 3 11 2 900 1300
+aux 4 10 2 1700 2100
+aux 5 62 3 900 1700
+aux 6 63 3 1300 1700
+
+# Adjustments [adjrange]
+
+# Receiver rxrange
+
+# temp_sensor
 
 # Mission Control Waypoints [wp]
 #wp 0 invalid
 
 # OSD [osd_layout]
-osd_layout 0 0 35 2 H
+osd_layout 0 0 26 1 V
 osd_layout 0 1 12 8 H
-osd_layout 0 7 23 14 V
-osd_layout 0 9 35 3 V
-osd_layout 0 11 33 13 V
-osd_layout 0 12 11 14 V
-osd_layout 0 13 12 2 V
-osd_layout 0 14 35 1 V
-osd_layout 0 15 11 1 V
-osd_layout 0 20 29 16 V
-osd_layout 0 21 11 16 V
-osd_layout 0 22 24 2 V
-osd_layout 0 23 21 3 V
-osd_layout 0 28 33 14 V
-osd_layout 0 30 11 15 V
-osd_layout 0 31 35 2 V
-osd_layout 0 32 11 13 V
-osd_layout 0 34 20 1 V
+osd_layout 0 7 14 12 V
+osd_layout 0 9 24 2 V
+osd_layout 0 10 12 11 H
+osd_layout 0 11 14 11 V
+osd_layout 0 12 10 10 V
+osd_layout 0 13 2 2 V
+osd_layout 0 14 10 1 V
+osd_layout 0 15 1 1 V
+osd_layout 0 20 0 12 V
+osd_layout 0 21 0 11 V
+osd_layout 0 22 14 3 V
+osd_layout 0 23 11 2 V
+osd_layout 0 28 24 11 V
+osd_layout 0 30 2 0 V
+osd_layout 0 31 15 1 V
+osd_layout 0 32 16 10 V
+osd_layout 0 34 20 1 H
+osd_layout 0 48 24 12 V
+osd_layout 0 85 12 3 H
 osd_layout 0 97 20 16 H
+osd_layout 0 109 23 10 H
+osd_layout 0 160 24 10 H
+osd_layout 0 161 24 9 H
+
+# Programming: logic
+
+# Programming: global variables
+
+# Programming: PID controllers
+
+# OSD: custom elements
 
 # master
 set gyro_main_lpf_hz = 80
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_mode = 3D
-set gyro_zero_x = -5
+set gyro_zero_x = -6
 set gyro_zero_y = -2
-set gyro_zero_z = -1
-set ins_gravity_cmss =  981.659
+set gyro_zero_z = -2
+set ins_gravity_cmss =  981.844
 set gyro_adaptive_filter_min_hz = 20
 set acc_hardware = ICM42605
 set acczero_x = -2
@@ -117,8 +162,9 @@ set nav_fw_control_smoothness = 2
 set nav_fw_launch_motor_delay = 100
 set nav_fw_launch_max_altitude = 5000
 set nav_fw_launch_climb_angle = 25
-set osd_video_system = HDZERO
+set osd_video_system = NTSC
 set osd_units = IMPERIAL
+set osd_coordinate_digits = 8
 set i2c_speed = 800KHZ
 set vtx_band = 5
 set vtx_channel = 8
@@ -239,7 +285,6 @@ mmix reset
 
 mmix 0  1.000  0.000  0.000  1.000
 mmix 1  1.000  0.000  0.000 -1.000
-mmix 2  1.000  0.000  0.000  0.000
 
 # Mixer: servo mixer
 smix reset
@@ -253,6 +298,7 @@ smix 3 4 29 -85 0 -1
 mixer_profile 2
 
 set platform_type = TRICOPTER
+set has_flaps = ON
 set model_preview_type = 1
 set motorstop_on_low = OFF
 set mixer_pid_profile_linking = ON
@@ -299,3 +345,8 @@ set throttle_idle =  5.000
 control_profile 2
 mixer_profile 2
 battery_profile 1
+
+# save configuration
+save
+
+# 
