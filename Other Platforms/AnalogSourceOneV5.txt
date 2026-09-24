@@ -1,0 +1,200 @@
+# resources
+resource SERIAL_RX 1 NONE
+resource PINIO 3 A10
+
+# feature
+feature GPS
+feature TELEMETRY
+feature OSD
+feature ESC_SENSOR
+
+# serial
+serial UART2 2 115200 115200 0 115200
+serial UART8 1024 115200 57600 0 115200
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -ARMING_GPS_FIX
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -DISARM_REPEAT
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 900 1700 0 0
+aux 1 1 2 1700 2100 0 0
+aux 2 3 4 900 1300 0 0
+aux 3 11 4 900 1700 0 0
+aux 4 46 3 1700 2100 0 0
+aux 5 13 1 1700 2100 0 0
+aux 6 35 1 900 1300 0 0
+aux 7 42 2 1275 2100 0 0
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 0
+set dyn_notch_count = 2
+set dyn_notch_min_hz = 125
+set dyn_notch_max_hz = 650
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 0
+set acc_calibration = 11,16,130,1
+set min_check = 1010
+set max_check = 1995
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
+set blackbox_disable_alt = ON
+set blackbox_disable_rssi = ON
+set blackbox_disable_acc = ON
+set blackbox_disable_debug = ON
+set blackbox_disable_servos = ON
+set motor_kv = 2550
+set dshot_bidir = ON
+set motor_output_reordering = 3,2,1,0,4,5,6,7
+set failsafe_procedure = GPS-RESCUE
+set vbat_scale = 111
+set ibata_scale = 85
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set gps_rescue_allow_arming_without_fix = ON
+set simplified_gyro_filter = OFF
+set report_cell_voltage = ON
+set osd_units = IMPERIAL
+set osd_warn_bitmask = 396669
+set osd_rssi_dbm_alarm = -102
+set osd_tim1 = 2561
+set osd_link_quality_pos = 2104
+set osd_pilot_name_pos = 2540
+set osd_gps_speed_pos = 1
+set osd_gps_lon_pos = 18913
+set osd_gps_lat_pos = 18881
+set osd_gps_sats_pos = 2070
+set osd_home_dir_pos = 2062
+set osd_home_dist_pos = 2092
+set osd_altitude_pos = 2049
+set osd_pid_roll_pos = 96
+set osd_pid_pitch_pos = 128
+set osd_pid_yaw_pos = 160
+set osd_warnings_pos = 14762
+set osd_avg_cell_voltage_pos = 2551
+set osd_disarmed_pos = 2315
+set osd_rate_profile_name_pos = 2081
+set osd_stat_bitmask = 1458316
+set osd_gps_sats_show_pdop = ON
+set vcd_video_system = PAL
+set pinio_box = 40,41,42,43
+set stats_min_armed_time_s = 10
+set stats_total_flights = 9
+set stats_total_time_s = 1906
+set stats_total_dist_m = 4760
+set pilot_name = MYN HWK
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 90
+set dterm_lpf1_dyn_max_hz = 180
+set dterm_lpf1_static_hz = 90
+set dterm_lpf2_static_hz = 180
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 0
+set p_pitch = 78
+set i_pitch = 140
+set d_pitch = 49
+set f_pitch = 235
+set p_roll = 75
+set i_roll = 133
+set d_roll = 43
+set f_roll = 226
+set p_yaw = 75
+set i_yaw = 133
+set f_yaw = 226
+set d_max_roll = 43
+set d_max_pitch = 49
+set d_max_gain = 37
+set d_max_advance = 20
+set thrust_linear = 20
+set feedforward_averaging = OFF
+set feedforward_jitter_factor = 5
+set simplified_master_multiplier = 145
+set simplified_pi_gain = 115
+set simplified_d_max_gain = 0
+set simplified_feedforward_gain = 130
+set simplified_dterm_filter_multiplier = 120
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rateprofile_name = KB
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 1
+set pitch_expo = 1
+set yaw_expo = 1
+set roll_srate = 63
+set pitch_srate = 59
+set yaw_srate = 59
+
+rateprofile 1
+
+# rateprofile 1
+set rateprofile_name = FS
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 90
+set pitch_rc_rate = 90
+set yaw_rc_rate = 90
+set roll_expo = 20
+set pitch_expo = 20
+set yaw_expo = 20
+set roll_srate = 82
+set pitch_srate = 82
+set yaw_srate = 82
+
+rateprofile 2
+
+# rateprofile 2
+set rateprofile_name = Steele
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 198
+set pitch_rc_rate = 198
+set yaw_rc_rate = 174
+set roll_expo = 21
+set pitch_expo = 21
+set yaw_expo = 21
+set roll_srate = 64
+set pitch_srate = 64
+set yaw_srate = 64
+
+rateprofile 3
+
+battery_profile 0
+
+# battery_profile 0
+set bat_capacity = 1550
+set vbat_max_cell_voltage = 438
+
+# restore original rateprofile selection
+rateprofile 0
+
+# restore original battery_profile selection
+battery_profile 0
